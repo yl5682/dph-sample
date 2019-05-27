@@ -35,26 +35,26 @@
   <h1>Poem Disappearance Example</h1>
 
   <div id="poem">
-    <a @click="forceUpdate" href="#">Dissolve</a>
+    <a @click="reset(false)" href="#">Dissolve</a>
     <p>
-      <v-reveal delay="delay-1s">
+      <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
         <span>Take sackcloth</span>
       </v-reveal>
-      <v-reveal delay="delay-1s">
+      <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
         <span>of the darkest dye,</span>
       </v-reveal>
-      <v-reveal delay="delay-1s">
+      <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
         <span>And shroud the pulpits round!</span>
       </v-reveal>
-      <v-reveal delay="delay-1s">
+      <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
         <span>Servants of Him that cannot lie,</span>
       </v-reveal>
-      <v-reveal delay="delay-1s">
+      <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
         <span>Sit mourning on the ground.</span>
       </v-reveal>
     </p>
 
-    <v-reveal delay="delay-2s">
+    <v-reveal delay="delay-2s" :is-reset="isReset" @reset="reset">
       <p>
         Let holy horror blanch each cheek, <br />
         Pale every brow with fears; <br />
@@ -63,7 +63,7 @@
       </p>
     </v-reveal>
 
-    <v-reveal delay="delay-3s">
+    <v-reveal delay="delay-3s" :is-reset="isReset" @reset="reset">
       <p>
         Let sorrow breathe in every tone, <br />
         In every strain ye raise; <br />
@@ -95,30 +95,52 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     Vue.component('v-reveal', {
-      props: ["delay"],
+      props: ["delay", "isReset"],
       data: function () {
         return {
           isRevealed: false,
           isAnimationDone: false,
         }
       },
-      template: '<div @click="reveal" @animationend="endAnimation" class="v-reveal fadeOut" :class="[{revealed : isRevealed}, {animated : !isAnimationDone}, delay]"><slot></slot></div>',
+      template: `
+      <div 
+        @click="reveal"
+        @animationend="endAnimation" 
+        class="v-reveal" 
+        :class="[{revealed : isRevealed && isReset}, {fadeOut : !isReset}, {animated : !isAnimationDone}, delay]">
+        <slot></slot>
+      </div>
+      `,
       methods: {
         reveal: function () {
           this.isRevealed = true;
+          this.$emit('reset', true);
         },
         endAnimation: function () {
           this.isAnimationDone = true;
+        }
+      },
+      watch: {
+        isReset: {
+          handler(){
+              this.isAnimationDone = false;
+              if (!this.isReset) {
+                this.isRevealed = false;
+              }
+          },
+          // immediate: true,
         }
       },
     })
 
     var poem = new Vue({
       el: '#poem',
-      data: {},
+      data: {
+        isReset: false,
+      },
       methods: {
-        forceUpdate: function(){
-          this.$forceUpdate();
+        reset: function(value){
+          this.isReset = value;
         }
       }
     })
