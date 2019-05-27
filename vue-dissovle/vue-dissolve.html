@@ -1,0 +1,205 @@
+<!doctype html>
+<html class="no-js" lang="EN">
+
+<head>
+  <meta charset="utf-8">
+  <title>An Interactive Dissolve Animation</title>
+  <meta name="description" content="An Interactive Dissolve Animation made with Vue.js and Animate.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
+  <link rel="stylesheet" href="vue-dissolve.css">
+  
+  <style>
+    .margin-v {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">An Interactive Dissolve Animation</a>
+  </nav>
+
+  <div class="container">
+    <div class="row margin-v">
+      <div class="col">
+
+        <h1>Poem Disappearance Example</h1>
+
+        <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="example-tab" data-toggle="pill" href="#example" role="tab"
+              aria-controls="example" aria-selected="true">Example</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="doc-tab" data-toggle="pill" href="#doc" role="tab"
+              aria-controls="doc" aria-selected="false">Documentation</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="tabContent">
+          <div class="tab-pane fade show active" id="example" role="tabpanel" aria-labelledby="example-tab">
+            <div id="app">
+              <a :class="{hidden : !isReset}" @click="reset(false)" href="#">Dissolve Again</a>
+              <p>
+                <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                  <span>Take sackcloth</span>
+                </v-reveal>
+                <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                  <span>of the darkest dye,</span>
+                </v-reveal>
+                <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                  <span>And shroud the pulpits round!</span>
+                </v-reveal>
+                <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                  <span>Servants of Him that cannot lie,</span>
+                </v-reveal>
+                <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                  <span>Sit mourning on the ground.</span>
+                </v-reveal>
+              </p>
+              
+              <v-reveal delay="delay-2s" :is-reset="isReset" @reset="reset">
+                <p>
+                  Let holy horror blanch each cheek, <br />
+                  Pale every brow with fears; <br />
+                  And rocks and stones, if ye could speak, <br />
+                  Ye well might melt to tears! 
+                </p>
+              </v-reveal>
+              
+              <v-reveal delay="delay-3s" :is-reset="isReset" @reset="reset">
+                <p>
+                  Let sorrow breathe in every tone, <br />
+                  In every strain ye raise; <br />
+                  Insult not God’s majestic throne <br />
+                  With th’ mockery of praise. 
+                </p>
+                <p>
+                  A “reverend” man, whose light should be <br />
+                  The guide of age and youth, <br />
+                  Brings to the shrine of Slavery <br />
+                  The sacrifice of truth! 
+                </p>
+                <p>
+                  For the direst wrong by man imposed, <br />
+                  Since Sodom’s fearful cry, <br />
+                  The word of life has been unclos’d, <br />
+                  To give your God the lie. 
+                </p>
+                <p>
+                  Oh! When ye pray for heathen lands, <br />
+                  And plead for their dark shores, <br />
+                  Remember Slavery’s cruel hands <br />
+                  Make heathens at your doors!
+                </p>
+              </v-reveal>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="doc" role="tabpanel" aria-labelledby="doc-tab">
+            <section>
+              <h2>Introduction</h2>
+              <p>
+                This is an interactive component that animates a poem fading out piece by piece. 
+                It was requested by Kayla Kamibayashi for her graduation thesis, where she intended to
+                create a dissolving experience and allow users to rediscover the lost content.
+              </p>
+              <p>
+                This widget is built with Vue.js and Animate.css.
+              </p>
+            </section>
+            <section>
+              <h2>Setup</h2>
+              <p>
+                Please include Vue.js and Animate.css in your project. 
+                Please also include <code>vue-dissolve.css</code> and <code>vue-dissolve.js</code> 
+                as two dependent files, where the <code>vue-dissolve.js</code> specifies the main application
+                as well as the <code>v-reveal</code> component.
+              </p>
+            </section>
+            <section>
+              <h2>Usage</h2>
+              <p>
+                You may use the following example application as a start.
+              </p>
+              <pre>
+                <code class="language-html">
+&lt;div id=&quot;app&quot;&gt;
+  &lt;a :class=&quot;{hidden : !isReset}&quot; @click=&quot;reset(false)&quot; href=&quot;#&quot;&gt;Dissolve Again&lt;/a&gt;
+
+  &lt;v-reveal delay=&quot;delay-1s&quot; :is-reset=&quot;isReset&quot; @reset=&quot;reset&quot;&gt;
+    &lt;p&gt;
+      Let holy horror blanch each cheek,&nbsp;&lt;br /&gt;
+      Pale every brow with fears;&nbsp;&lt;br /&gt;
+      And rocks and stones, if ye could speak,&nbsp;&lt;br /&gt;
+      Ye well might melt to tears!&nbsp;
+    &lt;/p&gt;
+  &lt;/v-reveal&gt;
+
+  &lt;v-reveal delay=&quot;delay-2s&quot; :is-reset=&quot;isReset&quot; @reset=&quot;reset&quot;&gt;
+    &lt;p&gt;
+      Let sorrow breathe in every tone,&nbsp;&lt;br /&gt;
+      In every strain ye raise;&nbsp;&lt;br /&gt;
+      Insult not God&rsquo;s majestic throne&nbsp;&lt;br /&gt;
+      With th&rsquo; mockery of praise.&nbsp;
+    &lt;/p&gt;
+    &lt;p&gt;
+      A &ldquo;reverend&rdquo; man, whose light should be&nbsp;&lt;br /&gt;
+      The guide of age and youth,&nbsp;&lt;br /&gt;
+      Brings to the shrine of Slavery&nbsp;&lt;br /&gt;
+      The sacrifice of truth!&nbsp;
+    &lt;/p&gt;
+  &lt;/v-reveal&gt;
+&lt;/div&gt;
+                </code>
+              </pre>
+
+              <p>
+                The <code class="language-html">id="app"</code> is the main Vue applicaiton and the <code class="language-html"><v-reveal></v-reveal></code>
+                is each instance of an animated component.
+              </p>
+
+              <p>
+                In <code class="language-html"><v-reveal></v-reveal></code>, <code class="language-html">delay="delay-1s"</code> can be customized 
+                based on the documentaiton of Animate.css. In other words, by default, there are options of 
+                <code class="language-html">delay-1s</code>, <code class="language-html">delay-2s</code>, and <code class="language-html">delay-3s</code> that can be used.
+              </p>
+
+              <p>
+                The content inside <code class="language-html"><v-reveal></v-reveal></code> is not limited to just <code class="language-html">&lt;p&gt;&lt;/p&gt;</code>
+                element. In other words, any valid HTML tags can be used inside (i.e. a Vue <code class="language-html">slot</code>).
+              </p>
+
+              <p>
+                Note that you may also customize the text used in the <code class="language-html">Dissolve Again</code> button.
+              </p>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="vue-dissolve.js"></script>
+
+</body>
+
+</html>

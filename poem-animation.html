@@ -1,205 +1,128 @@
 <!doctype html>
 <html class="no-js" lang="EN">
 
-<head>
-  <meta charset="utf-8">
-  <title>An Interactive Dissolve Animation</title>
-  <meta name="description" content="An Interactive Dissolve Animation made with Vue.js and Animate.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  <head>
+    <meta charset="utf-8">
+    <title>An Interactive Dissolve Animation</title>
+    <meta name="description" content="An Interactive Dissolve Animation made with Vue.js and Animate.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <style>
-    .margin-v {
-      margin: 1rem 0;
-    }
-  
-    .hidden {
-      visibility: hidden;
-    }
-  
-    .v-reveal {
-      -webkit-transition: opacity 0.1s ease-in-out;
-      -moz-transition: opacity 0.1s ease-in-out;
-      -ms-transition: opacity 0.1s ease-in-out;
-      -o-transition: opacity 0.1s ease-in-out;
-      opacity: 0;
-      cursor: pointer;
-    }
-  
-    .v-reveal:hover {
-      -webkit-transition: opacity 0.1s ease-in-out;
-      -moz-transition: opacity 0.1s ease-in-out;
-      -ms-transition: opacity 0.1s ease-in-out;
-      -o-transition: opacity 0.1s ease-in-out;
-      opacity: .3;
-    }
-  
-    .revealed {
-      -webkit-transition: opacity 0.1s ease-in-out;
-      -moz-transition: opacity 0.1s ease-in-out;
-      -ms-transition: opacity 0.1s ease-in-out;
-      -o-transition: opacity 0.1s ease-in-out;
-      opacity: 1 !important;
-      cursor: auto;
-    }
-  </style>
-</head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="vue-dissolve.css">
+    <style>
+      .margin-v {
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
 
-<body>
-  <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-    <![endif]-->
+  <body>
+    <!--[if IE]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
 
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">An Interactive Dissolve Animation</a>
-  </nav>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">An Interactive Dissolve Animation</a>
+    </nav>
 
-  <div class="container">
-    <div class="row margin-v">
-      <div class="col">
+    <div class="container">
+      <div class="row margin-v">
+        <div class="col">
 
-        <h1>Poem Disappearance Example</h1>
+          <h1>Poem Disappearance Example</h1>
 
-        <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="example-tab" data-toggle="pill" href="#example" role="tab"
-              aria-controls="example" aria-selected="true">Example</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="doc-tab" data-toggle="pill" href="#doc" role="tab"
-              aria-controls="doc" aria-selected="false">Documentation</a>
-          </li>
-        </ul>
-        <div class="tab-content" id="tabContent">
-          <div class="tab-pane fade show active" id="example" role="tabpanel" aria-labelledby="example-tab">
-            <div id="poem">
-            <a :class="{hidden : !isReset}" @click="reset(false)" href="#">Dissolve again</a>
-            <p>
-              <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
-                <span>Take sackcloth</span>
-              </v-reveal>
-              <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
-                <span>of the darkest dye,</span>
-              </v-reveal>
-              <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
-                <span>And shroud the pulpits round!</span>
-              </v-reveal>
-              <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
-                <span>Servants of Him that cannot lie,</span>
-              </v-reveal>
-              <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
-                <span>Sit mourning on the ground.</span>
-              </v-reveal>
-            </p>
-            
-            <v-reveal delay="delay-2s" :is-reset="isReset" @reset="reset">
-              <p>
-                Let holy horror blanch each cheek, <br />
-                Pale every brow with fears; <br />
-                And rocks and stones, if ye could speak, <br />
-                Ye well might melt to tears! 
-              </p>
-            </v-reveal>
-            
-            <v-reveal delay="delay-3s" :is-reset="isReset" @reset="reset">
-              <p>
-                Let sorrow breathe in every tone, <br />
-                In every strain ye raise; <br />
-                Insult not God’s majestic throne <br />
-                With th’ mockery of praise. 
-              </p>
-              <p>
-                A “reverend” man, whose light should be <br />
-                The guide of age and youth, <br />
-                Brings to the shrine of Slavery <br />
-                The sacrifice of truth! 
-              </p>
-              <p>
-                For the direst wrong by man imposed, <br />
-                Since Sodom’s fearful cry, <br />
-                The word of life has been unclos’d, <br />
-                To give your God the lie. 
-              </p>
-              <p>
-                Oh! When ye pray for heathen lands, <br />
-                And plead for their dark shores, <br />
-                Remember Slavery’s cruel hands <br />
-                Make heathens at your doors!
-              </p>
-            </v-reveal>
+          <ul class="nav nav-tabs mb-3" id="tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="example-tab" data-toggle="pill" href="#example" role="tab"
+                aria-controls="example" aria-selected="true">Example</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="doc-tab" data-toggle="pill" href="#doc" role="tab" aria-controls="doc"
+                aria-selected="false">Documentation</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="tabContent">
+            <div class="tab-pane fade show active" id="example" role="tabpanel" aria-labelledby="example-tab">
+              <div id="poem">
+                <a :class="{hidden : !isReset}" @click="reset(false)" href="#">Dissolve again</a>
+                <p>
+                  <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                    <span>Take sackcloth</span>
+                  </v-reveal>
+                  <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                    <span>of the darkest dye,</span>
+                  </v-reveal>
+                  <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                    <span>And shroud the pulpits round!</span>
+                  </v-reveal>
+                  <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                    <span>Servants of Him that cannot lie,</span>
+                  </v-reveal>
+                  <v-reveal delay="delay-1s" :is-reset="isReset" @reset="reset">
+                    <span>Sit mourning on the ground.</span>
+                  </v-reveal>
+                </p>
+
+                <v-reveal delay="delay-2s" :is-reset="isReset" @reset="reset">
+                  <p>
+                    Let holy horror blanch each cheek, <br />
+                    Pale every brow with fears; <br />
+                    And rocks and stones, if ye could speak, <br />
+                    Ye well might melt to tears! 
+                  </p>
+                </v-reveal>
+
+                <v-reveal delay="delay-3s" :is-reset="isReset" @reset="reset">
+                  <p>
+                    Let sorrow breathe in every tone, <br />
+                    In every strain ye raise; <br />
+                    Insult not God’s majestic throne <br />
+                    With th’ mockery of praise. 
+                  </p>
+                  <p>
+                    A “reverend” man, whose light should be <br />
+                    The guide of age and youth, <br />
+                    Brings to the shrine of Slavery <br />
+                    The sacrifice of truth! 
+                  </p>
+                  <p>
+                    For the direst wrong by man imposed, <br />
+                    Since Sodom’s fearful cry, <br />
+                    The word of life has been unclos’d, <br />
+                    To give your God the lie. 
+                  </p>
+                  <p>
+                    Oh! When ye pray for heathen lands, <br />
+                    And plead for their dark shores, <br />
+                    Remember Slavery’s cruel hands <br />
+                    Make heathens at your doors!
+                  </p>
+                </v-reveal>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="doc" role="tabpanel" aria-labelledby="doc-tab">
-            Docs
+            <div class="tab-pane fade" id="doc" role="tabpanel" aria-labelledby="doc-tab">
+              Docs
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
-    Vue.component('v-reveal', {
-      props: ["delay", "isReset"],
-      data: function () {
-        return {
-          isRevealed: false,
-          isAnimationDone: false,
-        }
-      },
-      template: `
-      <div 
-        @click="reveal"
-        @animationend="endAnimation" 
-        class="v-reveal" 
-        :class="[{revealed : isRevealed && isReset}, {fadeOut : !isReset}, {animated : !isAnimationDone}, delay]">
-        <slot></slot>
-      </div>
-      `,
-      methods: {
-        reveal: function () {
-          this.isRevealed = true;
-          this.$emit('reset', true);
-        },
-        endAnimation: function () {
-          this.isAnimationDone = true;
-        }
-      },
-      watch: {
-        isReset: {
-          handler(){
-              this.isAnimationDone = false;
-              if (!this.isReset) {
-                this.isRevealed = false;
-              }
-          },
-        }
-      },
-    })
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue-dissolve.js"></script>
 
-    var poem = new Vue({
-      el: '#poem',
-      data: {
-        isReset: false,
-      },
-      methods: {
-        reset: function(value){
-          this.isReset = value;
-        }
-      }
-    })
-
-  </script>
-
-</body>
+  </body>
 
 </html>
