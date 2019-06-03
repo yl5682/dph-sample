@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/themes/prism.min.css">
   <link rel="stylesheet" href="vue-dissolve.css">
-  
+
   <style>
     .margin-v {
       margin: 1rem 0;
@@ -42,8 +42,8 @@
               aria-controls="example" aria-selected="true">Example</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="doc-tab" data-toggle="pill" href="#doc" role="tab"
-              aria-controls="doc" aria-selected="false">Documentation</a>
+            <a class="nav-link" id="doc-tab" data-toggle="pill" href="#doc" role="tab" aria-controls="doc"
+              aria-selected="false">Documentation</a>
           </li>
         </ul>
         <div class="tab-content" id="tabContent">
@@ -67,7 +67,7 @@
                   <span>Sit mourning on the ground.</span>
                 </v-reveal>
               </p>
-              
+
               <v-reveal delay="delay-2s" :is-reset="isReset" @reset="reset">
                 <p>
                   Let holy horror blanch each cheek, <br />
@@ -76,7 +76,7 @@
                   Ye well might melt to tears! 
                 </p>
               </v-reveal>
-              
+
               <v-reveal delay="delay-3s" :is-reset="isReset" @reset="reset">
                 <p>
                   Let sorrow breathe in every tone, <br />
@@ -93,23 +93,29 @@
                 <p>
                   For the direst wrong by man imposed, <br />
                   Since Sodom’s fearful cry, <br />
-                  The word of life has been unclos’d, <br />
-                  To give your God the lie. 
-                </p>
-                <p>
-                  Oh! When ye pray for heathen lands, <br />
-                  And plead for their dark shores, <br />
-                  Remember Slavery’s cruel hands <br />
-                  Make heathens at your doors!
+                  The word of life has been unclos’d,
                 </p>
               </v-reveal>
+
+              <p>
+                <v-reveal delay="delay-4s" :is-reset="isReset" @reset="reset" :is-inline="true">
+                  To give
+                </v-reveal>
+                <v-reveal delay="delay-5s" :is-reset="isReset" @reset="reset" :is-inline="true">
+                  your God
+                </v-reveal>
+                <v-reveal delay="delay-6s" :is-reset="isReset" @reset="reset" :is-inline="true">
+                  the lie.
+                </v-reveal>
+              </p>
+
             </div>
           </div>
           <div class="tab-pane fade" id="doc" role="tabpanel" aria-labelledby="doc-tab">
             <section>
               <h2>Introduction</h2>
               <p>
-                This is an interactive component that animates a poem fading out piece by piece. 
+                This is an interactive component that animates a poem fading out piece by piece.
                 It was requested by Kayla Kamibayashi for her graduation thesis, where she intended to
                 create a dissolving experience and allow users to rediscover the lost content.
               </p>
@@ -120,8 +126,8 @@
             <section>
               <h2>Setup</h2>
               <p>
-                Please include Vue.js and Animate.css in your project. 
-                Please also include <code>vue-dissolve.css</code> and <code>vue-dissolve.js</code> 
+                Please include Vue.js and Animate.css in your project.
+                Please also include <code>vue-dissolve.css</code> and <code>vue-dissolve.js</code>
                 as two dependent files, where the <code>vue-dissolve.js</code> specifies the main application
                 as well as the <code>v-reveal</code> component.
               </p>
@@ -159,28 +165,55 @@
       The sacrifice of truth!&nbsp;
     &lt;/p&gt;
   &lt;/v-reveal&gt;
+
+  &lt;p&gt;
+    &lt;v-reveal delay=&quot;delay-3s&quot; :is-reset=&quot;isReset&quot; @reset=&quot;reset&quot; :is-inline=&quot;true&quot;&gt;
+      To give
+    &lt;/v-reveal&gt;
+    &lt;v-reveal delay=&quot;delay-4s&quot; :is-reset=&quot;isReset&quot; @reset=&quot;reset&quot; :is-inline=&quot;true&quot;&gt;
+      your God
+    &lt;/v-reveal&gt;
+    &lt;v-reveal delay=&quot;delay-5s&quot; :is-reset=&quot;isReset&quot; @reset=&quot;reset&quot; :is-inline=&quot;true&quot;&gt;
+      the lie.
+    &lt;/v-reveal&gt;
+  &lt;/p&gt;
 &lt;/div&gt;
                 </code>
               </pre>
 
               <p>
-                The <code class="language-html">id="app"</code> is the main Vue applicaiton and the <code class="language-html"><v-reveal></v-reveal></code>
+                The <code class="language-html">id="app"</code> is the main Vue applicaiton and the <code
+                  class="language-html">&lt;v-reveal&gt;&lt;/v-reveal&gt;</code>
                 is each instance of an animated component.
               </p>
 
               <p>
-                In <code class="language-html"><v-reveal></v-reveal></code>, <code class="language-html">delay="delay-1s"</code> can be customized 
-                based on the documentaiton of Animate.css. In other words, by default, there are options of 
-                <code class="language-html">delay-1s</code>, <code class="language-html">delay-2s</code>, and <code class="language-html">delay-3s</code> that can be used.
+                In <code class="language-html">&lt;v-reveal&gt;&lt;/v-reveal&gt;</code>, <code
+                  class="language-html">delay="delay-1s"</code> can be customized
+                based on the documentaiton of Animate.css. In other words, by default, there are options of
+                <code class="language-html">delay-1s</code>, <code class="language-html">delay-2s</code>, and <code
+                  class="language-html">delay-3s</code> that can be used.
               </p>
 
               <p>
-                The content inside <code class="language-html"><v-reveal></v-reveal></code> is not limited to just <code class="language-html">&lt;p&gt;&lt;/p&gt;</code>
-                element. In other words, any valid HTML tags can be used inside (i.e. a Vue <code class="language-html">slot</code>).
+                The content inside <code class="language-html">&lt;v-reveal&gt;&lt;/v-reveal&gt;</code> is not limited to just <code
+                  class="language-html">&lt;p&gt;&lt;/p&gt;</code>
+                elements. In other words, all valid HTML tags can be used inside (i.e. a Vue <code
+                  class="language-html">slot</code>).
               </p>
 
               <p>
-                Note that you may also customize the text used in the <code class="language-html">Dissolve Again</code> button.
+                If you are constructing <code class="language-html">&lt;v-reveal&gt;&lt;/v-reveal&gt;</code> for an 
+                <code class="language-html">inline</code> element, 
+                you may add <code class="language-html">:is-inline="true"</code> attribute to the 
+                <code class="language-html">&lt;v-reveal&gt;&lt;/v-reveal&gt;</code> component. Internally it adds a CSS rule,
+                <code class="language-html">display: inline-block</code>, to modify a previously 
+                <code class="language-html">block</code> element.
+              </p>
+
+              <p>
+                Note that you may also customize the text used in the <code class="language-html">Dissolve Again</code>
+                button.
               </p>
 
             </section>
@@ -191,11 +224,14 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="vue-dissolve.js"></script>

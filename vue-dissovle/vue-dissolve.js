@@ -1,7 +1,7 @@
 // Vue v-reveal component
 // Uses Vue.js and Animate.css
 Vue.component('v-reveal', {
-  props: ["delay", "isReset"],
+  props: ["delay", "isReset", "isInline"],
   data: function () {
     return {
       isRevealed: false,
@@ -13,7 +13,7 @@ Vue.component('v-reveal', {
         @click="reveal"
         @animationend="endAnimation" 
         class="v-reveal" 
-        :class="[{revealed : isRevealed && isReset}, {fadeOut : !isReset}, {animated : !isAnimationDone}, delay]">
+        :class="[{revealed : isRevealed && isReset}, {fadeOut : !isReset}, {animated : !isAnimationDone}, delay, {inline : isInline}]">
         <slot></slot>
       </div>
       `,
