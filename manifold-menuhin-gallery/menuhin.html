@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>lightgallery.js</title>
+  <meta name="description"
+    content="A customizable, modular, responsive, lightbox gallery. No dependencies. With tons of features such as thumbnails, youtube, vimeo and html5 videos, touch and drag suppot.. etc " />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css">
+  <link href="src/main.css" rel="stylesheet">
+  <link href="src/animate.css" rel="stylesheet">
+  <link href="src/lightgallery.css" rel="stylesheet">
+  <link href="src/lg-transitions.css" rel="stylesheet">
+  <link href="https://sachinchoolur.github.io/lightgallery.js/static/css/main.css" rel="stylesheet">
+  <link href="https://sachinchoolur.github.io/lightgallery.js/static/css/animate.css" rel="stylesheet">
+  <link href="https://sachinchoolur.github.io/lightgallery.js/lightgallery/css/lightgallery.css" rel="stylesheet">
+  <link href="https://sachinchoolur.github.io/lightgallery.js/lightgallery/css/lg-transitions.css" rel="stylesheet">
+  <meta name="google-site-verification" content="U0us1UCMQlFMWkKW8ix6UQfCg3qhrHhFjzwlODnx5G0" />
+  <style type="text/css">
+    .promo_bar {
+      background: #ff5b5d none repeat scroll 0 0;
+      height: 3.8em;
+      padding: 1em 1.25em;
+      position: relative;
+    }
+
+    .contain {
+      margin: 0 auto;
+      max-width: 77.8125em;
+      position: relative;
+    }
+
+    .promo_bar p {
+      color: white;
+      font-size: 15px;
+      font-weight: 400;
+      margin: 0;
+      text-align: center;
+    }
+
+    .promo_bar .promo_close {
+      color: #fff;
+      font-weight: bold;
+      position: absolute;
+      right: 20px;
+      top: 16px;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
+  <!-- -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body class="home">
+  <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+  
+        <div class="demo-gallery">
+          <ul id="lightgallery" class="list-unstyled row">
+            <li class="col-xs-6 col-sm-4 col-md-3"
+              data-responsive=""
+              data-src="imgs/5-1.png"
+              data-sub-html="Yehudi Menuhin School, original building. Photo by the author, March 15, 2018."
+              data-pinterest-text="Pin it" data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="imgs/5-1.png">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive="Yehudi Menuhin School, the Menuhin concert hall. Photo by the author, March 15, 2018."
+              data-src="imgs/5-2.png"
+              data-sub-html="Yehudi Menuhin School, the Menuhin concert hall. Photo by the author, March 15, 2018."
+              data-pinterest-text="Pin it" data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-3.jpg"
+              data-sub-html="Yehudi Menuhin School, author Kristin Wendland and research assistant Catherine MacGregor in front of the entrance from the main road. Photo by the author, March 15, 2018."
+              data-pinterest-text="Pin it" data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-4.jpg"
+              data-sub-html="Yehudi Menuhin School, Menuhin’s grave. Photo by the author, March 15, 2018.	" data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-5.jpg"
+              data-sub-html="Yehudi Menuhin School, the meditation path. Photo by the author, March 15, 2018." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-6.jpg"
+              data-sub-html="Gstaad International Menuhin Academy on its China tour, summer of 1982. Chinese student playing the pipa, with Menuhin facing her. Photo by Lisa Yancich, used by permission. " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-7.jpg"
+              data-sub-html="Gstaad International Menuhin Academy on its China tour, summer of 1982. The tour group at the Great Wall, Lisa Yancich front row, 4th from left. Photo from Lisa Yancich, used by permission. " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-8.jpg"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, cover. Can I really use this?" data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-9.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 1, p.17, demonstrating pranayama digital breathing." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-10.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 2, p.18, demonstrating good standing posture like tadasana (mountain pose)." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-11.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 11, p.23, demonstrating “the stork.” See also Weblink 5.4 for Menuhin’s demonstration, cue at 16:22." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-12.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 19, p.27, demonstrating circular arm motion. " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-13.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 24, p. 30, demonstrating shoulder stand. " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-14.png"
+              data-sub-html="Menuhin, Violin: Six Lessons with Yehudi Menuhin, Diagram 27, p. 31, demonstrating corpse pose." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-15.png"
+              data-sub-html="Menuhin, Life Class, front cover, with Menuhin sitting in lotus pose with his violin. " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-16.png"
+              data-sub-html="Menuhin, Life Class, Chapter 2, Figure 19, p. 53, demonstrating headstand." data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-6 col-sm-4 col-md-3 hidden"
+              data-responsive=""
+              data-src="imgs/5-17.png"
+              data-sub-html="Menuhin, Life Class, Chapter 2, Figure 24, p. 74, demonstrating “fiddler’s prayer.” " data-pinterest-text="Pin it"
+              data-tweet-text="share it on twitter">
+              <a href="">
+                <img class="img-responsive" src="">
+                <div class="demo-gallery-poster">
+                  <img src="src/zoom.png">
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+  <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/jquery.min.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/transition.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/wow.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/collapse.js"></script>
+  <!-- <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/jquery.sharrre.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lightgallery.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-share.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-fullscreen.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-zoom.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-autoplay.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-pager.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/lightgallery/js/lg-hash.js"></script>
+  <script src="https://sachinchoolur.github.io/lightgallery.js/static/js/main.js"></script>
+</body>
+
+</html>
